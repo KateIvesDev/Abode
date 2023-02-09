@@ -10,9 +10,9 @@ const firebaseConfig = {
     storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
     messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
     appId: process.env.NEXT_PUBLIC_APPID
-};
+}
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 
 export const auth = getAuth(app)
 export const db = getFirestore(app)
