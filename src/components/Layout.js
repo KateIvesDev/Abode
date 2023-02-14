@@ -1,16 +1,13 @@
 import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
+
 
 export default function Layout(props){
     const {children} = props
     return (
-        <div className='flex flex-col min-h-screen relative bg-teal-700 text-white'>
-            <Header/>
-            <main className='flex-1 flex flex-col p-4'>
+        <div className='flex flex-col min-h-screen relative slate-300 text-gray-800'>
+            <main className='flex-1 flex flex-col'>
                 {children}
             </main>
-            <Footer/> 
         </div>
     )
 }

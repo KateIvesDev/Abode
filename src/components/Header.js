@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Menu from './Menu'
 
 export default function Header(){
 
+    const [openMenu, setOpenMenu] = useState(false)
+    
     return(
-        <div className='sticky top-0 w-full left-0 flex items-center justify-between p-4 bg-inherit border-b border-solid border-white'>
-            <h1 className='text-3xl sm:text-6xl select-none'><i className="fa-solid fa-house text-2xl sm:text-4xl"></i> Abode</h1>
-            <i className="fa-solid fa-user text-xl sm:text-3xl cursor-pointer"></i>
-        </div>
+        <>
+            {openMenu && <Menu setOpenMenu={setOpenMenu} />}
+            <div className='w-full left-0 flex items-center justify-between p-4  shadow-md'>
+            <h1 className='font-bold text-xl sm:text-2xl select-none'>abode</h1>
+            <h2>Account Settings  <i onClick={()=> setOpenMenu(true)} className="fa-solid fa-user cursor-pointer"></i></h2>
+           
+            </div>
+        </>
+       
     )
 }
