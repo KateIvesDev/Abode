@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
+import sweetHome from '/public/assets/sweetHome.svg'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
@@ -30,19 +32,32 @@ export default function Login() {
     }
 
     return (
-        <div className='flex-1 text-xs sm:text-sm flex flex-col justify-center items-center gap-2 sm:gap-4'>
-            <h1 className='font-extrabold select-none text-2xl sm:text-4xl uppercase'>{isLoggingIn ? 'Login' : 'register'}</h1>
-            {error && <div className='w-full max-w-[40ch] border-rose-400 border text-center border-solid text-rose-400 py-2'>{error}</div>}
-            {!isLoggingIn && <div className='w-full max-w-[40ch] border-rose-400 border text-center border-solid text-rose-400 py-2 hidden'>{error}</div>}
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email Address' className='outline-none duration-300 border-b-2 border-solid border-white focus:border-cyan-300 text-slate-900 p-2 w-full max-w-[40ch]' />
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Password' className='outline-none text-slate-900 p-2 w-full max-w-[40ch] duration-300 border-b-2 border-solid border-white focus:border-cyan-300' />
-            <button onClick={submitHandler} className='w-full max-w-[40ch] border border-white border-solid uppercase py-2 duration-300 relative after:absolute after:top-0 after:right-full after:bg-white after:z-10 after:w-full after:h-full overflow-hidden hover:after:translate-x-full after:duration-300 hover:text-slate-900'>
-                <h2 className='relative z-20'>
-                    SUBMIT
-                </h2>
-            </button>
-            <h2 className='duration-300 hover:scale-110 cursor-pointer' onClick={() => setIsLoggingIn(!isLoggingIn)}>{!isLoggingIn ? 'Login' : 'Register'}</h2>
+        <div className='flex flex-col  md:flex-row md:h-screen'>
+            <div className='flex-1 text-xs sm:text-sm flex flex-col justify-center items-center gap-2 sm:gap-4 md:w-1/2 bg-slate-100'>
+                <div className='my-10'>
+                    <h1 className='font-bold text-3xl'>
+                    <i className="fa-solid fa-house"></i> abode
+                    </h1>
+                </div>
+                
+                <h2 className='font-extrabold select-none text-2xl sm:text-4xl uppercase'>{isLoggingIn ? 'Login' : 'register'}</h2>
+                {error && <div className='w-full max-w-[40ch] border-rose-400 border text-center border-solid text-rose-400 py-2'>{error}</div>}
+                {!isLoggingIn && <div className='w-full max-w-[40ch] border-rose-400 border text-center border-solid text-rose-400 py-2 hidden'>{error}</div>}
+                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email Address' className='outline-none duration-300 border-b-2 border-solid border-white focus:border-cyan-300 text-slate-900 p-2 w-full max-w-[40ch]' />
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Password' className='outline-none text-slate-900 p-2 w-full max-w-[40ch] duration-300 border-b-2 border-solid border-white focus:border-cyan-300' />
+                <button onClick={submitHandler} className='w-full max-w-[40ch] border border-white border-solid uppercase py-2 duration-300 relative after:absolute after:top-0 after:right-full after:bg-white after:z-10 after:w-full after:h-full overflow-hidden hover:after:translate-x-full after:duration-300 hover:text-slate-900'>
+                    <h2 className='relative z-20'>
+                        SUBMIT
+                    </h2>
+                </button>
+                <h2 className='duration-300 hover:scale-110 cursor-pointer' onClick={() => setIsLoggingIn(!isLoggingIn)}>{!isLoggingIn ? 'Login' : 'Register'}</h2>
+            </div>
 
+
+            <div className="object-fill w-1/2 flex flex-col justify-center md:w-1/2 mx-auto">
+              <Image alt="home illustration" src={sweetHome} className='p-5' />
+            </div>
         </div>
+        
     )
 }
