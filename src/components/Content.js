@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Overview from '../components/Overview'
-import Contacts from '../components/Contacts'
-import Rooms from '../components/Rooms'
-import Projects from '../components/Projects'
-import HomeDetails from '../components/HomeDetails'
+import Overview from '../pages/dashboard/Overview'
+import Contacts from '../pages/dashboard/Contacts'
+import Rooms from '../pages/dashboard/Rooms'
+import Projects from '../pages/dashboard/Projects'
+import HomeDetails from '../pages/dashboard/HomeDetails'
 
 export default function Content(props){
 

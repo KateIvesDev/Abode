@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Button from './Button'
-import data from '../data/contacts'
+import Button from '../../components/Button'
+import data from '../../data/contacts'
 
 export default function Contacts(){
 
